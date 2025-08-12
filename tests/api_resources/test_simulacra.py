@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestSimulacra:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: Toweroffantasy) -> None:
         simulacra = client.simulacra.retrieve(
@@ -29,7 +29,7 @@ class TestSimulacra:
         )
         assert_matches_type(SimulacraRetrieveResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: Toweroffantasy) -> None:
         simulacra = client.simulacra.retrieve(
@@ -38,7 +38,7 @@ class TestSimulacra:
         )
         assert_matches_type(SimulacraRetrieveResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: Toweroffantasy) -> None:
         response = client.simulacra.with_raw_response.retrieve(
@@ -50,7 +50,7 @@ class TestSimulacra:
         simulacra = response.parse()
         assert_matches_type(SimulacraRetrieveResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: Toweroffantasy) -> None:
         with client.simulacra.with_streaming_response.retrieve(
@@ -64,7 +64,7 @@ class TestSimulacra:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: Toweroffantasy) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `simulacrum_id` but received ''"):
@@ -72,13 +72,13 @@ class TestSimulacra:
                 simulacrum_id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list(self, client: Toweroffantasy) -> None:
         simulacra = client.simulacra.list()
         assert_matches_type(SimulacraListResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Toweroffantasy) -> None:
         simulacra = client.simulacra.list(
@@ -97,7 +97,7 @@ class TestSimulacra:
         )
         assert_matches_type(SimulacraListResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Toweroffantasy) -> None:
         response = client.simulacra.with_raw_response.list()
@@ -107,7 +107,7 @@ class TestSimulacra:
         simulacra = response.parse()
         assert_matches_type(SimulacraListResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Toweroffantasy) -> None:
         with client.simulacra.with_streaming_response.list() as response:
@@ -119,7 +119,7 @@ class TestSimulacra:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_liked_gifts(self, client: Toweroffantasy) -> None:
         simulacra = client.simulacra.liked_gifts(
@@ -127,7 +127,7 @@ class TestSimulacra:
         )
         assert_matches_type(SimulacraLikedGiftsResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_liked_gifts_with_all_params(self, client: Toweroffantasy) -> None:
         simulacra = client.simulacra.liked_gifts(
@@ -136,7 +136,7 @@ class TestSimulacra:
         )
         assert_matches_type(SimulacraLikedGiftsResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_liked_gifts(self, client: Toweroffantasy) -> None:
         response = client.simulacra.with_raw_response.liked_gifts(
@@ -148,7 +148,7 @@ class TestSimulacra:
         simulacra = response.parse()
         assert_matches_type(SimulacraLikedGiftsResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_liked_gifts(self, client: Toweroffantasy) -> None:
         with client.simulacra.with_streaming_response.liked_gifts(
@@ -162,7 +162,7 @@ class TestSimulacra:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_liked_gifts(self, client: Toweroffantasy) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `simulacrum_id` but received ''"):
@@ -176,7 +176,7 @@ class TestAsyncSimulacra:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncToweroffantasy) -> None:
         simulacra = await async_client.simulacra.retrieve(
@@ -184,7 +184,7 @@ class TestAsyncSimulacra:
         )
         assert_matches_type(SimulacraRetrieveResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncToweroffantasy) -> None:
         simulacra = await async_client.simulacra.retrieve(
@@ -193,7 +193,7 @@ class TestAsyncSimulacra:
         )
         assert_matches_type(SimulacraRetrieveResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.simulacra.with_raw_response.retrieve(
@@ -205,7 +205,7 @@ class TestAsyncSimulacra:
         simulacra = await response.parse()
         assert_matches_type(SimulacraRetrieveResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.simulacra.with_streaming_response.retrieve(
@@ -219,7 +219,7 @@ class TestAsyncSimulacra:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncToweroffantasy) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `simulacrum_id` but received ''"):
@@ -227,13 +227,13 @@ class TestAsyncSimulacra:
                 simulacrum_id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncToweroffantasy) -> None:
         simulacra = await async_client.simulacra.list()
         assert_matches_type(SimulacraListResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncToweroffantasy) -> None:
         simulacra = await async_client.simulacra.list(
@@ -252,7 +252,7 @@ class TestAsyncSimulacra:
         )
         assert_matches_type(SimulacraListResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.simulacra.with_raw_response.list()
@@ -262,7 +262,7 @@ class TestAsyncSimulacra:
         simulacra = await response.parse()
         assert_matches_type(SimulacraListResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.simulacra.with_streaming_response.list() as response:
@@ -274,7 +274,7 @@ class TestAsyncSimulacra:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_liked_gifts(self, async_client: AsyncToweroffantasy) -> None:
         simulacra = await async_client.simulacra.liked_gifts(
@@ -282,7 +282,7 @@ class TestAsyncSimulacra:
         )
         assert_matches_type(SimulacraLikedGiftsResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_liked_gifts_with_all_params(self, async_client: AsyncToweroffantasy) -> None:
         simulacra = await async_client.simulacra.liked_gifts(
@@ -291,7 +291,7 @@ class TestAsyncSimulacra:
         )
         assert_matches_type(SimulacraLikedGiftsResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_liked_gifts(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.simulacra.with_raw_response.liked_gifts(
@@ -303,7 +303,7 @@ class TestAsyncSimulacra:
         simulacra = await response.parse()
         assert_matches_type(SimulacraLikedGiftsResponse, simulacra, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_liked_gifts(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.simulacra.with_streaming_response.liked_gifts(
@@ -317,7 +317,7 @@ class TestAsyncSimulacra:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_liked_gifts(self, async_client: AsyncToweroffantasy) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `simulacrum_id` but received ''"):

@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestPing:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_ping(self, client: Toweroffantasy) -> None:
         ping = client.ping.ping()
         assert_matches_type(PingPingResponse, ping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_ping(self, client: Toweroffantasy) -> None:
         response = client.ping.with_raw_response.ping()
@@ -33,7 +33,7 @@ class TestPing:
         ping = response.parse()
         assert_matches_type(PingPingResponse, ping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_ping(self, client: Toweroffantasy) -> None:
         with client.ping.with_streaming_response.ping() as response:
@@ -51,13 +51,13 @@ class TestAsyncPing:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_ping(self, async_client: AsyncToweroffantasy) -> None:
         ping = await async_client.ping.ping()
         assert_matches_type(PingPingResponse, ping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_ping(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.ping.with_raw_response.ping()
@@ -67,7 +67,7 @@ class TestAsyncPing:
         ping = await response.parse()
         assert_matches_type(PingPingResponse, ping, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_ping(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.ping.with_streaming_response.ping() as response:
