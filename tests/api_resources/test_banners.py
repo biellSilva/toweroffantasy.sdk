@@ -22,7 +22,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestBanners:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create(self, client: Toweroffantasy) -> None:
         banner = client.banners.create(
@@ -33,7 +33,7 @@ class TestBanners:
         )
         assert_matches_type(Banner, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Toweroffantasy) -> None:
         banner = client.banners.create(
@@ -50,7 +50,7 @@ class TestBanners:
         )
         assert_matches_type(Banner, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Toweroffantasy) -> None:
         response = client.banners.with_raw_response.create(
@@ -65,7 +65,7 @@ class TestBanners:
         banner = response.parse()
         assert_matches_type(Banner, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Toweroffantasy) -> None:
         with client.banners.with_streaming_response.create(
@@ -82,13 +82,13 @@ class TestBanners:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list(self, client: Toweroffantasy) -> None:
         banner = client.banners.list()
         assert_matches_type(BannerListResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Toweroffantasy) -> None:
         banner = client.banners.list(
@@ -107,7 +107,7 @@ class TestBanners:
         )
         assert_matches_type(BannerListResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Toweroffantasy) -> None:
         response = client.banners.with_raw_response.list()
@@ -117,7 +117,7 @@ class TestBanners:
         banner = response.parse()
         assert_matches_type(BannerListResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Toweroffantasy) -> None:
         with client.banners.with_streaming_response.list() as response:
@@ -129,13 +129,13 @@ class TestBanners:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve_current(self, client: Toweroffantasy) -> None:
         banner = client.banners.retrieve_current()
         assert_matches_type(BannerRetrieveCurrentResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve_current(self, client: Toweroffantasy) -> None:
         response = client.banners.with_raw_response.retrieve_current()
@@ -145,7 +145,7 @@ class TestBanners:
         banner = response.parse()
         assert_matches_type(BannerRetrieveCurrentResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_current(self, client: Toweroffantasy) -> None:
         with client.banners.with_streaming_response.retrieve_current() as response:
@@ -163,7 +163,7 @@ class TestAsyncBanners:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncToweroffantasy) -> None:
         banner = await async_client.banners.create(
@@ -174,7 +174,7 @@ class TestAsyncBanners:
         )
         assert_matches_type(Banner, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncToweroffantasy) -> None:
         banner = await async_client.banners.create(
@@ -191,7 +191,7 @@ class TestAsyncBanners:
         )
         assert_matches_type(Banner, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.banners.with_raw_response.create(
@@ -206,7 +206,7 @@ class TestAsyncBanners:
         banner = await response.parse()
         assert_matches_type(Banner, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.banners.with_streaming_response.create(
@@ -223,13 +223,13 @@ class TestAsyncBanners:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncToweroffantasy) -> None:
         banner = await async_client.banners.list()
         assert_matches_type(BannerListResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncToweroffantasy) -> None:
         banner = await async_client.banners.list(
@@ -248,7 +248,7 @@ class TestAsyncBanners:
         )
         assert_matches_type(BannerListResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.banners.with_raw_response.list()
@@ -258,7 +258,7 @@ class TestAsyncBanners:
         banner = await response.parse()
         assert_matches_type(BannerListResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.banners.with_streaming_response.list() as response:
@@ -270,13 +270,13 @@ class TestAsyncBanners:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve_current(self, async_client: AsyncToweroffantasy) -> None:
         banner = await async_client.banners.retrieve_current()
         assert_matches_type(BannerRetrieveCurrentResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_current(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.banners.with_raw_response.retrieve_current()
@@ -286,7 +286,7 @@ class TestAsyncBanners:
         banner = await response.parse()
         assert_matches_type(BannerRetrieveCurrentResponse, banner, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_current(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.banners.with_streaming_response.retrieve_current() as response:
