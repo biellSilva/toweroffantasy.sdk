@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import Optional
 
 import httpx
 
 from ..types import LangsEnum, weapon_list_params, weapon_retrieve_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -88,16 +88,16 @@ class WeaponsResource(SyncAPIResource):
         *,
         charge_tier: Optional[str] | NotGiven = NOT_GIVEN,
         charge_value: Optional[int] | NotGiven = NOT_GIVEN,
-        exclude_categories: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_elements: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_qualities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_rarities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_categories: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_elements: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_qualities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_rarities: Optional[List[str]] | NotGiven = NOT_GIVEN,
+        exclude_categories: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        exclude_elements: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        exclude_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        exclude_qualities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        exclude_rarities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_categories: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_elements: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_qualities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_rarities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
         is_fate: Optional[bool] | NotGiven = NOT_GIVEN,
         is_limited: Optional[bool] | NotGiven = NOT_GIVEN,
         is_warehouse: Optional[bool] | NotGiven = NOT_GIVEN,
@@ -269,16 +269,16 @@ class AsyncWeaponsResource(AsyncAPIResource):
         *,
         charge_tier: Optional[str] | NotGiven = NOT_GIVEN,
         charge_value: Optional[int] | NotGiven = NOT_GIVEN,
-        exclude_categories: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_elements: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_qualities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_rarities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_categories: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_elements: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_qualities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_rarities: Optional[List[str]] | NotGiven = NOT_GIVEN,
+        exclude_categories: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        exclude_elements: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        exclude_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        exclude_qualities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        exclude_rarities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_categories: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_elements: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_qualities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_rarities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
         is_fate: Optional[bool] | NotGiven = NOT_GIVEN,
         is_limited: Optional[bool] | NotGiven = NOT_GIVEN,
         is_warehouse: Optional[bool] | NotGiven = NOT_GIVEN,

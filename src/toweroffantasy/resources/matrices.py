@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import Optional
 
 import httpx
 
 from ..types import LangsEnum, matrix_list_params, matrix_retrieve_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -86,8 +86,8 @@ class MatricesResource(SyncAPIResource):
     def list(
         self,
         *,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
+        exclude_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
         lang: LangsEnum | NotGiven = NOT_GIVEN,
         limit: int | NotGiven = NOT_GIVEN,
         page: int | NotGiven = NOT_GIVEN,
@@ -203,8 +203,8 @@ class AsyncMatricesResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
+        exclude_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
+        include_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
         lang: LangsEnum | NotGiven = NOT_GIVEN,
         limit: int | NotGiven = NOT_GIVEN,
         page: int | NotGiven = NOT_GIVEN,
