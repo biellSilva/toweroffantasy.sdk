@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Optional
+from typing import Union, Optional
 from datetime import datetime
 from typing_extensions import Annotated, TypedDict
 
+from .._types import SequenceNotStr
 from .._utils import PropertyInfo
 
 __all__ = ["BannerListParams"]
@@ -18,13 +19,13 @@ class BannerListParams(TypedDict, total=False):
     end_at_before: Annotated[Union[str, datetime, None], PropertyInfo(format="iso8601")]
     """Filter banners that end before this date"""
 
-    exclude_ids: Optional[List[str]]
+    exclude_ids: Optional[SequenceNotStr[str]]
     """Object ID should not be one of"""
 
     final_rerun: Optional[bool]
     """Filter banners that are final reruns"""
 
-    include_ids: Optional[List[str]]
+    include_ids: Optional[SequenceNotStr[str]]
     """Object ID should be one of"""
 
     is_collab: Optional[bool]

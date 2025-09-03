@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Optional
+from typing import Union, Optional
 from datetime import datetime
 
 import httpx
 
 from ..types import banner_list_params, banner_create_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -106,9 +106,9 @@ class BannersResource(SyncAPIResource):
         *,
         end_at_after: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
         end_at_before: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
+        exclude_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
         final_rerun: Optional[bool] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
+        include_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
         is_collab: Optional[bool] | NotGiven = NOT_GIVEN,
         is_rerun: Optional[bool] | NotGiven = NOT_GIVEN,
         limit: int | NotGiven = NOT_GIVEN,
@@ -287,9 +287,9 @@ class AsyncBannersResource(AsyncAPIResource):
         *,
         end_at_after: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
         end_at_before: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
+        exclude_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
         final_rerun: Optional[bool] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
+        include_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
         is_collab: Optional[bool] | NotGiven = NOT_GIVEN,
         is_rerun: Optional[bool] | NotGiven = NOT_GIVEN,
         limit: int | NotGiven = NOT_GIVEN,

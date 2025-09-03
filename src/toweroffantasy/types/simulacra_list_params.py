@@ -2,31 +2,32 @@
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import Optional
 from typing_extensions import TypedDict
 
+from .._types import SequenceNotStr
 from .langs_enum import LangsEnum
 
 __all__ = ["SimulacraListParams"]
 
 
 class SimulacraListParams(TypedDict, total=False):
-    exclude_ids: Optional[List[str]]
+    exclude_ids: Optional[SequenceNotStr[str]]
     """Id should not be one of"""
 
-    exclude_rarities: Optional[List[str]]
+    exclude_rarities: Optional[SequenceNotStr[str]]
     """Rarity should exclude one of"""
 
-    exclude_sex: Optional[List[str]]
+    exclude_sex: Optional[SequenceNotStr[str]]
     """Sex should exclude one of"""
 
-    include_ids: Optional[List[str]]
+    include_ids: Optional[SequenceNotStr[str]]
     """Id should be one of"""
 
-    include_rarities: Optional[List[str]]
+    include_rarities: Optional[SequenceNotStr[str]]
     """Rarity should include one of"""
 
-    include_sex: Optional[List[str]]
+    include_sex: Optional[SequenceNotStr[str]]
     """Sex should include one of"""
 
     is_limited: Optional[bool]
