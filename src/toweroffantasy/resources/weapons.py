@@ -7,7 +7,7 @@ from typing import Optional
 import httpx
 
 from ..types import LangsEnum, weapon_list_params, weapon_retrieve_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -49,13 +49,13 @@ class WeaponsResource(SyncAPIResource):
         self,
         weapon_id: str,
         *,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
+        lang: LangsEnum | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> WeaponRetrieveResponse:
         """
         Get Weapon
@@ -86,33 +86,33 @@ class WeaponsResource(SyncAPIResource):
     def list(
         self,
         *,
-        charge_tier: Optional[str] | NotGiven = NOT_GIVEN,
-        charge_value: Optional[int] | NotGiven = NOT_GIVEN,
-        exclude_categories: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        exclude_elements: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        exclude_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        exclude_qualities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        exclude_rarities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_categories: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_elements: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_qualities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_rarities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        is_fate: Optional[bool] | NotGiven = NOT_GIVEN,
-        is_limited: Optional[bool] | NotGiven = NOT_GIVEN,
-        is_warehouse: Optional[bool] | NotGiven = NOT_GIVEN,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
-        limit: int | NotGiven = NOT_GIVEN,
-        name: Optional[str] | NotGiven = NOT_GIVEN,
-        page: int | NotGiven = NOT_GIVEN,
-        shatter_tier: Optional[str] | NotGiven = NOT_GIVEN,
-        shatter_value: Optional[int] | NotGiven = NOT_GIVEN,
+        charge_tier: Optional[str] | Omit = omit,
+        charge_value: Optional[int] | Omit = omit,
+        exclude_categories: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_elements: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_qualities: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_rarities: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_categories: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_elements: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_qualities: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_rarities: Optional[SequenceNotStr[str]] | Omit = omit,
+        is_fate: Optional[bool] | Omit = omit,
+        is_limited: Optional[bool] | Omit = omit,
+        is_warehouse: Optional[bool] | Omit = omit,
+        lang: LangsEnum | Omit = omit,
+        limit: int | Omit = omit,
+        name: Optional[str] | Omit = omit,
+        page: int | Omit = omit,
+        shatter_tier: Optional[str] | Omit = omit,
+        shatter_value: Optional[int] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> WeaponListResponse:
         """
         Get All Weapons
@@ -230,13 +230,13 @@ class AsyncWeaponsResource(AsyncAPIResource):
         self,
         weapon_id: str,
         *,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
+        lang: LangsEnum | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> WeaponRetrieveResponse:
         """
         Get Weapon
@@ -267,33 +267,33 @@ class AsyncWeaponsResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        charge_tier: Optional[str] | NotGiven = NOT_GIVEN,
-        charge_value: Optional[int] | NotGiven = NOT_GIVEN,
-        exclude_categories: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        exclude_elements: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        exclude_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        exclude_qualities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        exclude_rarities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_categories: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_elements: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_qualities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        include_rarities: Optional[SequenceNotStr[str]] | NotGiven = NOT_GIVEN,
-        is_fate: Optional[bool] | NotGiven = NOT_GIVEN,
-        is_limited: Optional[bool] | NotGiven = NOT_GIVEN,
-        is_warehouse: Optional[bool] | NotGiven = NOT_GIVEN,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
-        limit: int | NotGiven = NOT_GIVEN,
-        name: Optional[str] | NotGiven = NOT_GIVEN,
-        page: int | NotGiven = NOT_GIVEN,
-        shatter_tier: Optional[str] | NotGiven = NOT_GIVEN,
-        shatter_value: Optional[int] | NotGiven = NOT_GIVEN,
+        charge_tier: Optional[str] | Omit = omit,
+        charge_value: Optional[int] | Omit = omit,
+        exclude_categories: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_elements: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_qualities: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_rarities: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_categories: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_elements: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_qualities: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_rarities: Optional[SequenceNotStr[str]] | Omit = omit,
+        is_fate: Optional[bool] | Omit = omit,
+        is_limited: Optional[bool] | Omit = omit,
+        is_warehouse: Optional[bool] | Omit = omit,
+        lang: LangsEnum | Omit = omit,
+        limit: int | Omit = omit,
+        name: Optional[str] | Omit = omit,
+        page: int | Omit = omit,
+        shatter_tier: Optional[str] | Omit = omit,
+        shatter_value: Optional[int] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> WeaponListResponse:
         """
         Get All Weapons
