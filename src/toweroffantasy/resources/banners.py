@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Optional
+from typing import Union, Optional
 from datetime import datetime
 
 import httpx
 
 from ..types import banner_list_params, banner_create_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -53,18 +53,18 @@ class BannersResource(SyncAPIResource):
         imitation_id: str,
         start_at: Union[str, datetime],
         weapon_id: str,
-        final_rerun: bool | NotGiven = NOT_GIVEN,
-        is_collab: bool | NotGiven = NOT_GIVEN,
-        is_rerun: bool | NotGiven = NOT_GIVEN,
-        limited_only: bool | NotGiven = NOT_GIVEN,
-        link: Optional[str] | NotGiven = NOT_GIVEN,
-        suit_id: Optional[str] | NotGiven = NOT_GIVEN,
+        final_rerun: bool | Omit = omit,
+        is_collab: bool | Omit = omit,
+        is_rerun: bool | Omit = omit,
+        limited_only: bool | Omit = omit,
+        link: Optional[str] | Omit = omit,
+        suit_id: Optional[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Banner:
         """
         Create Banner
@@ -104,24 +104,24 @@ class BannersResource(SyncAPIResource):
     def list(
         self,
         *,
-        end_at_after: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        end_at_before: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        final_rerun: Optional[bool] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        is_collab: Optional[bool] | NotGiven = NOT_GIVEN,
-        is_rerun: Optional[bool] | NotGiven = NOT_GIVEN,
-        limit: int | NotGiven = NOT_GIVEN,
-        limited_only: Optional[bool] | NotGiven = NOT_GIVEN,
-        page: int | NotGiven = NOT_GIVEN,
-        start_at_after: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        start_at_before: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        end_at_after: Union[str, datetime, None] | Omit = omit,
+        end_at_before: Union[str, datetime, None] | Omit = omit,
+        exclude_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        final_rerun: Optional[bool] | Omit = omit,
+        include_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        is_collab: Optional[bool] | Omit = omit,
+        is_rerun: Optional[bool] | Omit = omit,
+        limit: int | Omit = omit,
+        limited_only: Optional[bool] | Omit = omit,
+        page: int | Omit = omit,
+        start_at_after: Union[str, datetime, None] | Omit = omit,
+        start_at_before: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> BannerListResponse:
         """
         Get Banners
@@ -195,7 +195,7 @@ class BannersResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> BannerRetrieveCurrentResponse:
         """Get Current Banners"""
         return self._get(
@@ -234,18 +234,18 @@ class AsyncBannersResource(AsyncAPIResource):
         imitation_id: str,
         start_at: Union[str, datetime],
         weapon_id: str,
-        final_rerun: bool | NotGiven = NOT_GIVEN,
-        is_collab: bool | NotGiven = NOT_GIVEN,
-        is_rerun: bool | NotGiven = NOT_GIVEN,
-        limited_only: bool | NotGiven = NOT_GIVEN,
-        link: Optional[str] | NotGiven = NOT_GIVEN,
-        suit_id: Optional[str] | NotGiven = NOT_GIVEN,
+        final_rerun: bool | Omit = omit,
+        is_collab: bool | Omit = omit,
+        is_rerun: bool | Omit = omit,
+        limited_only: bool | Omit = omit,
+        link: Optional[str] | Omit = omit,
+        suit_id: Optional[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Banner:
         """
         Create Banner
@@ -285,24 +285,24 @@ class AsyncBannersResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        end_at_after: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        end_at_before: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        final_rerun: Optional[bool] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        is_collab: Optional[bool] | NotGiven = NOT_GIVEN,
-        is_rerun: Optional[bool] | NotGiven = NOT_GIVEN,
-        limit: int | NotGiven = NOT_GIVEN,
-        limited_only: Optional[bool] | NotGiven = NOT_GIVEN,
-        page: int | NotGiven = NOT_GIVEN,
-        start_at_after: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        start_at_before: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        end_at_after: Union[str, datetime, None] | Omit = omit,
+        end_at_before: Union[str, datetime, None] | Omit = omit,
+        exclude_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        final_rerun: Optional[bool] | Omit = omit,
+        include_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        is_collab: Optional[bool] | Omit = omit,
+        is_rerun: Optional[bool] | Omit = omit,
+        limit: int | Omit = omit,
+        limited_only: Optional[bool] | Omit = omit,
+        page: int | Omit = omit,
+        start_at_after: Union[str, datetime, None] | Omit = omit,
+        start_at_before: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> BannerListResponse:
         """
         Get Banners
@@ -376,7 +376,7 @@ class AsyncBannersResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> BannerRetrieveCurrentResponse:
         """Get Current Banners"""
         return await self._get(

@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import Optional
 
 import httpx
 
 from ..types import LangsEnum, simulacra_list_params, simulacra_retrieve_params, simulacra_liked_gifts_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -50,13 +50,13 @@ class SimulacraResource(SyncAPIResource):
         self,
         simulacrum_id: str,
         *,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
+        lang: LangsEnum | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SimulacraRetrieveResponse:
         """
         Get Simulacrum
@@ -87,24 +87,24 @@ class SimulacraResource(SyncAPIResource):
     def list(
         self,
         *,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_rarities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_sex: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_rarities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_sex: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        is_limited: Optional[bool] | NotGiven = NOT_GIVEN,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
-        limit: int | NotGiven = NOT_GIVEN,
-        name: Optional[str] | NotGiven = NOT_GIVEN,
-        no_weapon: Optional[bool] | NotGiven = NOT_GIVEN,
-        page: int | NotGiven = NOT_GIVEN,
+        exclude_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_rarities: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_sex: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_rarities: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_sex: Optional[SequenceNotStr[str]] | Omit = omit,
+        is_limited: Optional[bool] | Omit = omit,
+        lang: LangsEnum | Omit = omit,
+        limit: int | Omit = omit,
+        name: Optional[str] | Omit = omit,
+        no_weapon: Optional[bool] | Omit = omit,
+        page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SimulacraListResponse:
         """
         Get Simulacra
@@ -174,13 +174,13 @@ class SimulacraResource(SyncAPIResource):
         self,
         simulacrum_id: str,
         *,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
+        lang: LangsEnum | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SimulacraLikedGiftsResponse:
         """
         Get Simulacrum Liked Gifts
@@ -233,13 +233,13 @@ class AsyncSimulacraResource(AsyncAPIResource):
         self,
         simulacrum_id: str,
         *,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
+        lang: LangsEnum | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SimulacraRetrieveResponse:
         """
         Get Simulacrum
@@ -270,24 +270,24 @@ class AsyncSimulacraResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        exclude_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_rarities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        exclude_sex: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_ids: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_rarities: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        include_sex: Optional[List[str]] | NotGiven = NOT_GIVEN,
-        is_limited: Optional[bool] | NotGiven = NOT_GIVEN,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
-        limit: int | NotGiven = NOT_GIVEN,
-        name: Optional[str] | NotGiven = NOT_GIVEN,
-        no_weapon: Optional[bool] | NotGiven = NOT_GIVEN,
-        page: int | NotGiven = NOT_GIVEN,
+        exclude_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_rarities: Optional[SequenceNotStr[str]] | Omit = omit,
+        exclude_sex: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_ids: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_rarities: Optional[SequenceNotStr[str]] | Omit = omit,
+        include_sex: Optional[SequenceNotStr[str]] | Omit = omit,
+        is_limited: Optional[bool] | Omit = omit,
+        lang: LangsEnum | Omit = omit,
+        limit: int | Omit = omit,
+        name: Optional[str] | Omit = omit,
+        no_weapon: Optional[bool] | Omit = omit,
+        page: int | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SimulacraListResponse:
         """
         Get Simulacra
@@ -357,13 +357,13 @@ class AsyncSimulacraResource(AsyncAPIResource):
         self,
         simulacrum_id: str,
         *,
-        lang: LangsEnum | NotGiven = NOT_GIVEN,
+        lang: LangsEnum | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SimulacraLikedGiftsResponse:
         """
         Get Simulacrum Liked Gifts

@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestWeapons:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: Toweroffantasy) -> None:
         weapon = client.weapons.retrieve(
@@ -28,7 +28,7 @@ class TestWeapons:
         )
         assert_matches_type(WeaponRetrieveResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: Toweroffantasy) -> None:
         weapon = client.weapons.retrieve(
@@ -37,7 +37,7 @@ class TestWeapons:
         )
         assert_matches_type(WeaponRetrieveResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: Toweroffantasy) -> None:
         response = client.weapons.with_raw_response.retrieve(
@@ -49,7 +49,7 @@ class TestWeapons:
         weapon = response.parse()
         assert_matches_type(WeaponRetrieveResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: Toweroffantasy) -> None:
         with client.weapons.with_streaming_response.retrieve(
@@ -63,7 +63,7 @@ class TestWeapons:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: Toweroffantasy) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `weapon_id` but received ''"):
@@ -71,13 +71,13 @@ class TestWeapons:
                 weapon_id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list(self, client: Toweroffantasy) -> None:
         weapon = client.weapons.list()
         assert_matches_type(WeaponListResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Toweroffantasy) -> None:
         weapon = client.weapons.list(
@@ -105,7 +105,7 @@ class TestWeapons:
         )
         assert_matches_type(WeaponListResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Toweroffantasy) -> None:
         response = client.weapons.with_raw_response.list()
@@ -115,7 +115,7 @@ class TestWeapons:
         weapon = response.parse()
         assert_matches_type(WeaponListResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Toweroffantasy) -> None:
         with client.weapons.with_streaming_response.list() as response:
@@ -133,7 +133,7 @@ class TestAsyncWeapons:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncToweroffantasy) -> None:
         weapon = await async_client.weapons.retrieve(
@@ -141,7 +141,7 @@ class TestAsyncWeapons:
         )
         assert_matches_type(WeaponRetrieveResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncToweroffantasy) -> None:
         weapon = await async_client.weapons.retrieve(
@@ -150,7 +150,7 @@ class TestAsyncWeapons:
         )
         assert_matches_type(WeaponRetrieveResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.weapons.with_raw_response.retrieve(
@@ -162,7 +162,7 @@ class TestAsyncWeapons:
         weapon = await response.parse()
         assert_matches_type(WeaponRetrieveResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.weapons.with_streaming_response.retrieve(
@@ -176,7 +176,7 @@ class TestAsyncWeapons:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncToweroffantasy) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `weapon_id` but received ''"):
@@ -184,13 +184,13 @@ class TestAsyncWeapons:
                 weapon_id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncToweroffantasy) -> None:
         weapon = await async_client.weapons.list()
         assert_matches_type(WeaponListResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncToweroffantasy) -> None:
         weapon = await async_client.weapons.list(
@@ -218,7 +218,7 @@ class TestAsyncWeapons:
         )
         assert_matches_type(WeaponListResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncToweroffantasy) -> None:
         response = await async_client.weapons.with_raw_response.list()
@@ -228,7 +228,7 @@ class TestAsyncWeapons:
         weapon = await response.parse()
         assert_matches_type(WeaponListResponse, weapon, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncToweroffantasy) -> None:
         async with async_client.weapons.with_streaming_response.list() as response:
